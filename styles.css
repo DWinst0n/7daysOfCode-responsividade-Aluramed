@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url(styles/reset.css);
+@import url(styles/media.css);
 
 :root {
     --fonte-principal: "Montserrat", sans-serif;
@@ -45,6 +46,9 @@ body {
     font-style: normal;
     font-weight: 700;
     line-height: 160%;
+}
+.consultas{
+    margin-bottom: 6.925em;
 }
 .consulta__cronograma{
     display: grid;
@@ -124,20 +128,6 @@ body {
     font-weight: 500;
     line-height: 160%;
 }
-.agendar__consulta{
-    color: var(--cor-de-fundo-secundaria);
-    background-color: var(--cor-destaque-primaria);
-    filter: drop-shadow(0px 4px 16px var(--cor-destaque-primaria));
-    width: 3.5em;
-    height: 3.5em;
-    border-radius: 360rem;
-    border: none;
-    padding: 1em;
-    font-size: 1rem;
-    position: fixed;
-    right: 1em;
-    bottom: 4.625em;
-}
 .nav__rodape{
     display: flex;
     text-align: center;
@@ -153,6 +143,7 @@ body {
 }
 .rodape__botao{
     color: var(--cor-fonte-primaria);
+    opacity: 60%;
     font-size: 0.75rem;
     font-style: normal;
     font-weight: 400;
@@ -163,4 +154,92 @@ body {
 }
 .calendario{
     color: var(--cor-destaque-primaria);
+    opacity: 100%;
+}
+.checkbox-alternar {
+    display: none;
+}
+.container__menu{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+.botao-menu{
+    padding: 0.125em;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--cor-de-fundo-secundaria);
+    background-color: var(--cor-destaque-primaria);
+    filter: drop-shadow(0px 4px 16px var(--cor-destaque-primaria));
+    width: 3.5em;
+    height: 3.5em;
+    font-size: 1rem;
+    position: fixed;
+    right: 1em;
+    bottom: 4.625em;
+    z-index: 2;
+    transition: transform 0.3s ease;
+}
+.checkbox-alternar:checked + .botao-menu {
+    transform: rotate(45deg);
+}
+.sub-menu {
+    position: fixed;
+    right: 1em;
+    z-index: 2;
+    opacity: 0;
+    transform: translateY(20px); 
+    transition: opacity 0.3s ease, transform 0.3s ease; 
+    display: flex;
+    flex-direction: column;
+}
+.opcao {
+    filter: drop-shadow(0px 4px 8px var(--cor-destaque-primaria) 0.5);
+    border: none;
+    cursor: pointer;
+}
+.opcao__container{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    margin-right: -0.755em;
+}
+.opcao__texto{
+    padding: 0.125rem 0.5rem;
+    align-items: center;
+    gap: 0.625rem;
+    background-color: var(--cor-de-fundo-secundaria);
+    border-radius: 145.1875rem;
+    width: auto;
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 500;
+}
+.fundo-escuro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.checkbox-alternar:checked ~ .sub-menu {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+    bottom: 8.925em;
+}
+
+.checkbox-alternar:checked ~ .fundo-escuro {
+    display: block;
+    opacity: 1;
+    display: block;
 }
