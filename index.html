@@ -7,9 +7,9 @@
     <title>AluraMed (7daysOfCode-responsividade)</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="principal">
     <header class="cabecalho">
-        <img src="img/user-circle-nb.svg" alt="Imagem do usuario" class="usuario">
+        <img src="img/user-circle-nb.svg" alt="Imagem do usuario" class="usuario__imagem">
         <div class="cabecalho__texto">
             <h1 class="ola">Olá, doutor(a)!</h1>
             <p class="consultas__quantidade"> mais 3 consultas hoje</p>
@@ -234,11 +234,45 @@
     </main>
     <footer class="rodape">
         <ul class="nav__rodape">
-            <li class="rodape__botao calendario"><img src="img/Calendarioicone.svg"> Consultas</li>
-            <li class="rodape__botao"><img src="img/clientes icone.svg"> Clientes</li>
-            <li class="rodape__botao"><img src="img/relatorios icone.svg"> Relatorios</li>
-            <li class="rodape__botao"><img src="img/menu icone.svg"> Menu</li>
+            <li class="rodape__botao calendario"><img src="img/Calendarioicone.svg" class="rodape__imagem"> Consultas</li>
+            <li class="rodape__botao"><img src="img/clientes icone.svg" class="rodape__imagem"> Clientes</li>
+            <li class="rodape__botao"><img src="img/relatorios icone.svg" class="rodape__imagem"> Relatorios</li>
+            <li class="rodape__botao"><img src="img/menu icone.svg" class="rodape__imagem imagem__menu"> Menu</li>
         </ul>
+        <section class="cadastrar__consulta">
+            <h2 class="cadastrar__titulo">Cadastrar nova consulta.</h2>
+            <br>
+        <form class="cadastrar__formulario">
+            <fieldset class="grupo">
+                <div class="campo">
+                    <label for="nome">Nome do paciente</label>
+                    <input type="text" name="nome" id="nome" required class="preencher__dados cadastro__nome">
+                </div>
+                <div class="campo">
+                    <label for="sobrenome">Data da consulta</label>
+                    <input type="date" name="data" id="data" required class="preencher__dados">
+                </div>
+                <div class="campo">
+                    <label for="horario">Horario da consulta</label>
+                    <input type="time" name="horario" id="horario" required class="preencher__dados">
+                </div>
+            </fieldset> 
+            </div>
+            <div class="campo">
+                <div class="consultas__tipo">                <label>Tipo de consulta</label>
+                <label>
+                    <input type="radio" name="modalidade" value="remoto" checked class="botao__modalidade">Remoto
+                </label>
+                <label>
+                    <input type="radio" name="modalidade" value="presencial" class="botao__modalidade">Presencial
+                </label>
+            </div>
+            <label for="observacoes">Observações da consulta:</label>
+            <textarea  rows="4" cols="50" class="observacoes"></textarea>
+            </div>
+            <button class="botao__cadastro">Concluído</button>
+        </form>
+    </section>
     </footer>
 </body>
 </html>
