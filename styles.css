@@ -247,7 +247,7 @@ body {
 }
 @media screen and (min-width:700px){
     .consultas{
-        margin: auto 2em;
+        margin: 1em auto 6.925em;
     }
     .consulta__cronograma{
     grid-template-columns: 50% 50%;
